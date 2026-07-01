@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAILSCRIBE // TACTICAL TRAIL ANALYSIS</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="interface-shell">
+        <header id="system-header">
+            <div class="brand-unit">
+                <span class="glitch-text">TRAILSCRIBE</span>
+                <span class="version-tag">V1.0.4_STABLE</span>
+            </div>
+            <div id="system-metrics">
+                <div class="metric-group">
+                    <span class="label">SATELLITE</span>
+                    <span class="value" id="sat-status">LINKED</span>
+                </div>
+                <div class="metric-group">
+                    <span class="label">LATENCY</span>
+                    <span class="value" id="sys-latency">12ms</span>
+                </div>
+            </div>
+        </header>
 
+        <main id="workspace">
+            <section id="input-orchestrator">
+                <div id="drop-zone">
+                    <div class="drop-zone-content">
+                        <div class="upload-icon"></div>
+                        <span class="instructional-text">DEPLOY GPX/KML DATA</span>
+                        <input type="file" id="file-input" accept=".gpx,.kml" hidden>
+                    </div>
+                </div>
+            </section>
+
+            <section id="visualizer-core">
+                <div id="map-container"></div>
+                <div id="map-overlay-controls">
+                    <button id="toggle-terrain" class="tactical-btn">TERRAIN_MODE</button>
+                    <button id="toggle-3d" class="tactical-btn">3D_PERSPECTIVE</button>
+                </div>
+            </section>
+
+            <section id="telemetry-suite">
+                <div id="elevation-profile-container">
+                    <canvas id="elevation-chart"></canvas>
+                </div>
+                <div id="stats-matrix">
+                    <div class="stat-card">
+                        <span class="stat-label">CUMULATIVE_DIST</span>
+                        <span class="stat-value" id="stat-distance">0.00 km</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">TOTAL_ASCENT</span>
+                        <span class="stat-value" id="stat-ascent">0 m</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">MAX_ELEVATION</span>
+                        <span class="stat-value" id="stat-max-elev">0 m</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">EST_DURATION</span>
+                        <span class="stat-value" id="stat-time">0h 0m</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="system-footer">
+            <div class="coord-display">
+                <span class="label">CURRENT_CURSOR</span>
+                <span id="cursor-lat">0.0000</span>
+                <span class="separator">/</span>
+                <span id="cursor-lng">0.0000</span>
+            </div>
+            <div class="system-clock" id="system-clock">00:00:00 UTC</div>
+        </footer>
+    </div>
+
+    <script src="engine.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
