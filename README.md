@@ -1,2 +1,2 @@
 # TrailScribe
-An offline web utility tool that converts GPS data into minimalist, trail maps and summaries for navigation.
+A tough, field‑ready tool that turns GPX files into detailed 3D maps and delivers pinpoint elevation data.
